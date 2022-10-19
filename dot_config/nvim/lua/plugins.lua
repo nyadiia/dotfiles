@@ -20,6 +20,30 @@ return require('packer').startup(function(use)
     opt = true,
     requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}}
   }
-  
 
+  -- barbar
+  use {
+    'romgrk/barbar.nvim',
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
+
+  -- vimtex
+  use 'lervag/vimtex'
+  
+  -- deoplete
+  use {
+  	'Shougo/deoplete.nvim',
+	requires = {'roxma/nvim-yarp','roxma/vim-hug-neovim-rpc'}
+  }
+
+  -- nvim-treesitter
+  use 'nvim-treesitter/nvim-treesitter'
+
+  -- nvim tree
+  use {
+  'nvim-tree/nvim-tree.lua',
+  requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+  }
 end)

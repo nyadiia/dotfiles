@@ -74,12 +74,22 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["barbar.nvim"] = {
+    loaded = true,
+    path = "/home/nyadiia/.local/share/nvim/site/pack/packer/start/barbar.nvim",
+    url = "https://github.com/romgrk/barbar.nvim"
+  },
   ["completion-nvim"] = {
-    after = { "vim-vsnip", "vim-vsnip-integ" },
+    after = { "vim-vsnip-integ", "vim-vsnip" },
     loaded = false,
     needs_bufread = false,
     path = "/home/nyadiia/.local/share/nvim/site/pack/packer/opt/completion-nvim",
     url = "https://github.com/haorenW1025/completion-nvim"
+  },
+  ["deoplete.nvim"] = {
+    loaded = true,
+    path = "/home/nyadiia/.local/share/nvim/site/pack/packer/start/deoplete.nvim",
+    url = "https://github.com/Shougo/deoplete.nvim"
   },
   ["lualine.nvim"] = {
     loaded = true,
@@ -92,6 +102,11 @@ _G.packer_plugins = {
     path = "/home/nyadiia/.local/share/nvim/site/pack/packer/opt/nvim-web-devicons",
     url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
+  ["nvim-yarp"] = {
+    loaded = true,
+    path = "/home/nyadiia/.local/share/nvim/site/pack/packer/start/nvim-yarp",
+    url = "https://github.com/roxma/nvim-yarp"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/home/nyadiia/.local/share/nvim/site/pack/packer/start/packer.nvim",
@@ -101,6 +116,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/nyadiia/.local/share/nvim/site/pack/packer/start/vim-closer",
     url = "https://github.com/rstacruz/vim-closer"
+  },
+  ["vim-hug-neovim-rpc"] = {
+    loaded = true,
+    path = "/home/nyadiia/.local/share/nvim/site/pack/packer/start/vim-hug-neovim-rpc",
+    url = "https://github.com/roxma/vim-hug-neovim-rpc"
   },
   ["vim-vsnip"] = {
     load_after = {
@@ -120,6 +140,11 @@ _G.packer_plugins = {
     needs_bufread = false,
     path = "/home/nyadiia/.local/share/nvim/site/pack/packer/opt/vim-vsnip-integ",
     url = "https://github.com/hrsh7th/vim-vsnip-integ"
+  },
+  vimtex = {
+    loaded = true,
+    path = "/home/nyadiia/.local/share/nvim/site/pack/packer/start/vimtex",
+    url = "https://github.com/lervag/vimtex"
   }
 }
 

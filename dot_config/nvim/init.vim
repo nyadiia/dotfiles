@@ -1,9 +1,9 @@
+lua require('plugins')
+lua require('config')
+
 set nu! rnu!
 filetype plugin indent on
 syntax enable
-
-lua require('plugins')
-lua require('config')
 
 let g:deoplete#enable_at_startup = 1
 let g:vimtex_view_method = 'zathura'

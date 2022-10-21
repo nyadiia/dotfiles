@@ -4,6 +4,8 @@ lua require('config')
 set nu! rnu!
 filetype plugin indent on
 syntax enable
+nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
+vnoremap <Space> zf
 
 let g:deoplete#enable_at_startup = 1
 let g:vimtex_view_method = 'zathura'

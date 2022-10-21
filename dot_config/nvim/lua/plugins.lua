@@ -45,5 +45,7 @@ return require('packer').startup(function(use)
   requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
+  -- nvim lspconfig
+  use 'neovim/nvim-lspconfig'
   }
 end)

@@ -3,7 +3,7 @@
  * Maintainer: joekamprad <joekamprad@endeavouros.com>
  *******************************************************/
 configuration {
-    font:                "Noto Sans Regular 10";
+    font:                "FiraCode Nerd Font 10";
     show-icons:          false;
     icon-theme:          "Qogir";
     display-drun:        "KeyHint";

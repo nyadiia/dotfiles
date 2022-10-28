@@ -1,11 +1,8 @@
 #!/usr/bin/env bash
-
-PICTURE=/tmp/i3lock.png
-SCREENSHOT="scrot -z $PICTURE"
-
-BLUR="5x4"
-
-$SCREENSHOT
-convert $PICTURE -blur $BLUR $PICTURE
-i3lock -i $PICTURE
-rm $PICTURE
+PRIMARY=#ffa8fc
+HL=#ff00f7
+RED=#fc265f
+WHITE=#ffffff
+BLUE=#3dc2ff
+FONT=FiraCode\ Nerd\ Font
+i3lock -ke --blur=sigma --indicator --ring-color=$PRIMARY\ff --radius 100 --ring-width 10 --time-color=$WHITE\ff --time-str="%H:%M" --date-color=$WHITE\ff --keyhl-color=$HL\ff --bshl-color=$RED\ff --ringwrong-color=$RED\ff --insidewrong-color=$RED\cc --ringver-color=$BLUE\ff --insidever-color=$BLUE\cc --pass-media-keys --pass-screen-keys --pass-power-keys --pass-volume-keys --time-font=$FONT --date-font=$FONT --verif-font=$FONT --verif-font=$FONT --wrong-font=$FONT 

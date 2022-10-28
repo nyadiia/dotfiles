@@ -22,7 +22,12 @@
 exec --no-startup-id xinput set-prop "PIXA3854:00 093A:0274 Touchpad" "libinput Disable While Typing Enabled" 0
 bindsym $mod+Shift+S exec flameshot gui -c -s
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-for_window[class=".*"] border pixel 4
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
 exec xrandr --dpi 110
 exec xset r rate 250 60
 # Font for window titles. Will also be used by the bar unless a different font
@@ -429,6 +434,8 @@ exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 ##################
 # floating rules #
 ##################
+
+for_window[class=".*"] border pixel 0
 
 # set floating (nontiling) for apps needing it
 for_window [class="Yad" instance="yad"] floating enable

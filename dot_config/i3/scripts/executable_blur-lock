@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-PRIMARY=#ffa8fc
-HL=#ff00f7
-RED=#fc265f
+PRIMARY=#ff006f
+HL=#be56ff
+RED=#ff006f
 WHITE=#ffffff
 BLUE=#3dc2ff
 FONT=FiraCode\ Nerd\ Font

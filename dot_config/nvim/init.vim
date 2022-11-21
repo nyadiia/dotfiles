@@ -2,6 +2,8 @@ lua require('plugins')
 lua require('config')
 
 set nu! rnu!
+set spelllang=en,cjk
+set spellsuggest=best,9
 filetype plugin indent on
 syntax enable
 nnoremap <silent> <Space> @=(foldlevel('.')?'za':"\<Space>")<CR>
@@ -36,3 +38,7 @@ nnoremap <silent> <F7> :lua require("knap").toggle_autopreviewing()<CR>
 inoremap <silent> <F8> <C-o>:lua require("knap").forward_jump()<CR>
 vnoremap <silent> <F8> <C-c>:lua require("knap").forward_jump()<CR>
 nnoremap <silent> <F8> :lua require("knap").forward_jump()<CR>
+
+"Spell Check"
+nnoremap <silent> <F11> :set spell!<cr>
+inoremap <silent> <F11> <C-O>:set spell!<cr>

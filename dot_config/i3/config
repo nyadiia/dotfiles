@@ -24,14 +24,15 @@ exec gnome-keyring-daemon --start --components=secrets, ssh
 exec --no-startup-id xinput set-prop "PIXA3854:00 093A:0274 Touchpad" "libinput Disable While Typing Enabled" 0
 bindsym $mod+Shift+S exec flameshot gui -c -s
 bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+exec xrandr --dpi 110
+exec xset r rate 250 50
+
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-exec xrandr --dpi 110
-exec xset r rate 250 60
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
@@ -188,7 +189,7 @@ bindsym $mod+r mode "resize"
 ######################################
 
 # start a terminal
-bindsym $mod+Return exec kitty
+bindsym $mod+Return exec $TERMINAL
 
 # kill focused window
 bindsym $mod+q kill
@@ -358,7 +359,8 @@ exec_always --no-startup-id picom --config  ~/.config/picom.conf --experimental-
 #############################################
 
 #get auth work with polkit-gnome
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+#exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id /usr/lib/mate-polkit/polkit-mate-authentication-agent-1
 
 # dex execute .desktop files + apps using /etc/xdg/autostart.
 # when second to i3 a DE is installed or mixed usage of i3 + xfce4 or GNOME

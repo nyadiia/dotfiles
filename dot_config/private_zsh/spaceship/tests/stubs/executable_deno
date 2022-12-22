@@ -1,3 +1,0 @@
-#!/usr/bin/env zsh
-
-echo 'deno 1.27.0'

@@ -1,0 +1,7 @@
+#!/bin/bash
+
+sleep 1
+dunst &
+waybar &
+swww init & 
+swww img ~/Pictures/Wallpapers/celeste-by-amora-b.jpg &

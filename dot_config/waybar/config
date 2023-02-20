@@ -1,0 +1,129 @@
+{
+  "layer": "top", // Waybar at top layer
+  "position": "top", // Waybar position (top|bottom|left|right)
+  // Waybar height (to be removed for auto height)
+  "margin": "5 5 0 5",
+  // "width": 1280, // Waybar width
+  // Choose the order of the modules
+  "modules-left": ["wlr/workspaces", "custom/pacman"],
+  "modules-center": ["clock", "custom/weather"],
+  "modules-right": [
+    "pulseaudio",
+    "backlight",
+    "cpu",
+    "temperature",
+    "custom/ppd",
+    "battery",
+    "tray"
+  ],
+
+  //***************************
+  //*  Modules configuration  *
+  //***************************
+
+  "wlr/workspaces": {
+    "sort-by-number": true,
+    "disable-scroll": true,
+    "on-click": "activate"
+  },
+
+  "custom/pacman": {
+    "format": "{} ",
+    "interval": 900, // every hour
+    "exec": "(checkupdates;paru -Qu) | wc -l", // # of updates
+    "exec-if": "exit 0", // always run; consider advanced run conditions
+    "on-click": "kitty sh -c 'paru; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar", // update system
+    "signal": 8,
+    "tooltip": false
+  },
+
+  "clock": {
+    "timezone": "America/Chicago",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%a, %d %b, %I:%M %p}"
+  },
+
+  "custom/weather": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 1800,
+    "exec": "$HOME/.config/waybar/scripts/wttr.py",
+    "return-type": "json"
+  },
+
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "reverse-scrolling": 1,
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": "婢 {format_source}",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["奄", "奔", "墳"]
+    },
+    "on-click": "pavucontrol",
+    "min-length": 7
+  },
+
+  "cpu": {
+    "interval": 10,
+    "format": " {}%",
+    "max-length": 10
+  },
+
+  // "custom/mem": {
+  //   "format": "{} ",
+  //   "interval": 3,
+  //   "exec": "free -h | awk '/Mem:/{printf $3}'",
+  //   "tooltip": false
+  // },
+
+  "temperature": {
+    "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    "format-critical": "{icon} {temperatureC}°C",
+    "format": "{icon} {temperatureC}°C",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": false
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "", "", "", ""],
+    "min-length": 7
+  },
+
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "{capacity}% ",
+    "format-plugged": "{capacity}% ",
+    "format-alt": " {icon} {capacity}% {time}",
+    "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+    "on-update": "$HOME/.config/waybar/scripts/check_battery.sh"
+  },
+
+  "custom/ppd": {
+    "format": {},
+    "interval": 5,
+    "exec": "$XDG_CONFIG_HOME/scripts/ppd-status.sh",
+    "tooltip": false
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 0
+  }
+}

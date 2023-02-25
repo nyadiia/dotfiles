@@ -1,7 +1,7 @@
 {
   "layer": "top", // Waybar at top layer
   "position": "top", // Waybar position (top|bottom|left|right)
-  "margin": "0 0 -12 0",
+  "margin": "3 3 0 3",
   "modules-left": ["wlr/workspaces", "custom/separator", "hyprland/window", "hyprland/submap"],
   "modules-center": ["clock","custom/separator", "custom/weather"],
   "modules-right": [
@@ -114,7 +114,7 @@
   },
 
   "network": {
-    "interface": "wlp170s0",
+    // "interface": "wlp170s0",
     "format": "{ifname}",
     "format-wifi": " {essid} ({signalStrength}%)",
     "format-ethernet": " {ipaddr}/{cidr}",
@@ -135,13 +135,13 @@
     "format-plugged": " {capacity}%",
     "format-alt": " {icon} {capacity}% {time}",
     "format-icons": ["", "", "", "", "", "", "", "", "", ""],
-    "on-update": "$HOME/.config/waybar/scripts/check_battery.sh"
+    "on-update": "/home/nyadiia/.config/waybar/scripts/check_battery.sh"
   },
 
   "custom/ppd": {
     "format": "{}",
     "interval": 5,
-    "exec": "$XDG_CONFIG_HOME/scripts/ppd-status.sh",
+    "exec": "$HOME/.config/scripts/ppd-status.sh",
     "tooltip": false
   },
 }

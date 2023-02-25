@@ -115,7 +115,7 @@ in {
       bind = $mainMod, D, exec, wofi --show drun
       bind = $mainMod SHIFT, D, exec, wofi --show run
       bind = $mainMod SHIFT, S, exec, grimshot copy area
-      bind = $mainMod, Print, exec, grim - | wl-copy
+      bind = $mainMod, Print, exec, grimshot save screen
       bind = $mainMod SHIFT, C, exec, hyprpicker | wl-copy
 
       # Audio

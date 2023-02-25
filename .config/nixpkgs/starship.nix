@@ -3,7 +3,7 @@
 {
   programs.starship = {
     enable = true;
-      settings = {
+    settings = {
       add_newline = true;
 
       character = {
@@ -20,7 +20,7 @@
         style_user = "#FF0066";
         style_root = "#A00CE8";
       };
-      
+
       # package.disabled = true;
     };
   };

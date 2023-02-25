@@ -3,7 +3,7 @@
 {
   programs.zsh = {
     enable = true;
-    
+
     completionInit = true;
     enableCompletion = true;
     enableAutosuggestions = true;
@@ -30,13 +30,7 @@
     oh-my-zsh = {
       enable = true;
 
-      plugins = [
-        "command-not-found"
-        "git"
-        "history"
-        "sudo"
-        "fzf"
-      ];
+      plugins = [ "command-not-found" "git" "history" "sudo" "fzf" ];
     };
     initExtra = ''
       source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
@@ -84,5 +78,5 @@
       export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
       export NUGET_PACKAGES="$XDG_CACHE_HOME"/NuGetPackages
     '';
-    };
+  };
 }

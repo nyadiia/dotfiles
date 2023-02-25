@@ -1,5 +1,3 @@
-# home config
-
 {pkgs, ...}: let
   flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
 
@@ -20,7 +18,7 @@ in {
       monitor=,preferred,auto,1
       monitor=DP-3,highres,auto,2
 
-      exec-once = $XDG_CONFIG_HOME/hypr/autostart
+      exec-once = $HOME/.config/hyprland/autostart
 
       input {
           kb_layout = us
@@ -112,8 +110,8 @@ in {
       bind = $mainMod, W, exec, firefox
 
       # Utilities
-      bind = $mainMod SHIFT, E, exec, $XDG_CONFIG_HOME/scripts/wofi-power.sh
-      bind = $mainMod SHIFT, P, exec, $XDG_CONFIG_HOME/scripts/wofi-ppd.sh
+      bind = $mainMod SHIFT, E, exec, $HOME/.config/hyprland/wofi-power.sh
+      bind = $mainMod SHIFT, P, exec, $HOME/.config/hyprland/wofi-ppd.sh
       bind = $mainMod, D, exec, wofi --show drun
       bind = $mainMod SHIFT, D, exec, wofi --show run
       bind = $mainMod SHIFT, S, exec, grimshot copy area

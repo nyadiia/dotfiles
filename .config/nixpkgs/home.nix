@@ -8,6 +8,7 @@
     ./git.nix
     ./starship.nix
     ./hyprland.nix
+    ./helix.nix
   ];
 
   home = {
@@ -15,7 +16,7 @@
     homeDirectory = "/home/nyadiia";
     packages = [
       pkgs.zsh
-      pkgs.btop
+      pkgs.helix
     ];
     stateVersion = "22.11";
   };

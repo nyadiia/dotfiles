@@ -5,6 +5,7 @@
   # paths it should manage.
   imports = [
     ./zsh.nix
+    ./git.nix
   ];
 
   home.username = "nyadiia";

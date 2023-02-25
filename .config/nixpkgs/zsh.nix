@@ -48,7 +48,7 @@
     };
     history = {
       size = 10000;
-      path = "$dotDir/histfile";
+      path = "$HOME/.config/zsh/histfile";
     };
     oh-my-zsh = {
       enable = true;

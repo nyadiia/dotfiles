@@ -4,7 +4,7 @@
   programs.helix = {
     enable = true;
     themes = {
-      catpuccin_mocha = let 
+      catppuccin_mocha = let 
         rosewater = "#f5e0dc";
         flamingo = "#f2cdcd";
         pink = "#f5c2e7";

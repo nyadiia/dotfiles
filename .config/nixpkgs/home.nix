@@ -9,6 +9,8 @@
     ./starship.nix
     ./hyprland.nix
     ./helix.nix
+    ./wezterm.nix
+    ./wpaperd.nix
   ];
 
   home = {
@@ -17,6 +19,9 @@
     packages = [
       pkgs.zsh
       pkgs.helix
+      pkgs.git
+      pkgs.wezterm
+      pkgs.wpaperd
     ];
     stateVersion = "22.11";
   };

@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/home/nyadiia/.nix-profile/bin/zsh
 
-entries=" Power Saver\n Balanced\n龍 Performance"
+entries=" power Saver\n balanced\n龍 performance"
 
 selected=$(echo -e $entries|wofi --width 250 --height 170 --dmenu --cache-file /dev/null | awk '{print tolower($2)}')
 echo $selected

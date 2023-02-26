@@ -1,0 +1,15 @@
+#!/home/nyadiia/.nix-profile/bin/zsh
+
+sleep 1
+
+killall mako
+killall waybar
+killall fcitx5
+killall wpaperd
+
+mako &
+waybar &
+wpaperd
+fcitx5 -d &
+
+systemctl --user start wluma &

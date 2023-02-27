@@ -17,6 +17,10 @@ in {
     ./wpaperd.nix
   ];
 
+  nixpkgs.config = {
+    allowUnfree = true;
+  };
+
   home = {
     username = "nyadiia";
     homeDirectory = "/home/nyadiia";
@@ -28,9 +32,17 @@ in {
       pkgs.wpaperd
       pkgs.btop
       (pkgs.python3.withPackages python-packages)
+      (pkgs.discord.override { withOpenASAR = true; })
     ];
     stateVersion = "22.11";
   };
+
+  # nixpkgs.overlays = let
+  #   openASAR = self: super: {
+  #     discord = super.discord.override { withOpenASAR = true; };
+  #   };
+  # in
+  #   [ openASAR ];
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

@@ -11,6 +11,7 @@ in {
     ./hyprland
     ./btop
     ./shell
+    ./wofi
     ./git.nix
     ./helix.nix
     ./wezterm.nix

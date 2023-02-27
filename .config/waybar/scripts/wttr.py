@@ -1,1 +1,0 @@
-/nix/store/kzbvjzvb6pkcxfblwqxrrjzxg25qyvx6-home-manager-files/.config/waybar/scripts/wttr.py

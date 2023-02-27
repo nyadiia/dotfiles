@@ -5,6 +5,7 @@
   # paths it should manage.
   imports = [
     ./hyprland
+    ./waybar
     ./btop
     ./shell
     ./git.nix
@@ -23,6 +24,7 @@
       pkgs.wezterm
       pkgs.wpaperd
       pkgs.btop
+      pkgs.python3
     ];
     stateVersion = "22.11";
   };

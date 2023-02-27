@@ -12,6 +12,7 @@ in {
     ./btop
     ./shell
     ./wofi
+    ./waybar
     ./git.nix
     ./helix.nix
     ./wezterm.nix

@@ -1,11 +1,14 @@
 { config, pkgs, ... }:
-
-{
+let
+  python-packages = p: with p; [
+    requests
+    # other python packages
+  ];
+in {
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   imports = [
     ./hyprland
-    ./waybar
     ./btop
     ./shell
     ./git.nix
@@ -24,7 +27,7 @@
       pkgs.wezterm
       pkgs.wpaperd
       pkgs.btop
-      pkgs.python3
+      (pkgs.python3.withPackages python-packages)
     ];
     stateVersion = "22.11";
   };

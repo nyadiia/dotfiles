@@ -1,4 +1,4 @@
-#!/home/nyadiia/.nix-profile/bin/zsh
+#!/usr/bin/env zsh
 
 sleep 1
 
@@ -11,5 +11,3 @@ mako &
 waybar &
 wpaperd
 fcitx5 -d &
-
-systemctl --user start wluma &

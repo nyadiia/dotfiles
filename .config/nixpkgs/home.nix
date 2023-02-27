@@ -4,14 +4,13 @@
   # Home Manager needs a bit of information about you and the
   # paths it should manage.
   imports = [
-    ./zsh.nix
+    ./hyprland
+    ./btop
+    ./shell
     ./git.nix
-    ./starship.nix
-    ./hyprland.nix
     ./helix.nix
     ./wezterm.nix
     ./wpaperd.nix
-    ./btop
   ];
 
   home = {

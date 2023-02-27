@@ -1,5 +1,4 @@
-#!/bin/bash
-
+#!/usr/bin/env zsh
 entries="󰍃 logout\n󰒲 suspend\n󰋊 hibernate\n reboot\n󰐥 shutdown\n"
 
 selected=$(echo -e $entries|wofi --width 250 --height 230 --dmenu --cache-file /dev/null | awk '{print tolower($2)}')

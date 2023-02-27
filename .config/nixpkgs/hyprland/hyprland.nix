@@ -1,4 +1,4 @@
-{ pkgs, ... }: let
+{ config, pkgs, ... }: let
   flake-compat = builtins.fetchTarball "https://github.com/edolstra/flake-compat/archive/master.tar.gz";
 
   hyprland = (import flake-compat {
@@ -18,7 +18,7 @@ in {
       monitor=,preferred,auto,1
       monitor=DP-3,highres,auto,2
 
-      exec-once = $HOME/.config/hypr/autostart
+      exec-once = $HOME/.config/scripts/autostart
 
       input {
           kb_layout = us
@@ -110,8 +110,8 @@ in {
       bind = $mainMod, W, exec, firefox
 
       # Utilities
-      bind = $mainMod SHIFT, E, exec, $HOME/.config/hypr/wofi-power.sh
-      bind = $mainMod SHIFT, P, exec, $HOME/.config/hypr/wofi-ppd.sh
+      bind = $mainMod SHIFT, E, exec, $HOME/.config/scripts/wofi-power.sh
+      bind = $mainMod SHIFT, P, exec, $HOME/.config/scripts/wofi-ppd.sh
       bind = $mainMod, D, exec, wofi --show drun
       bind = $mainMod SHIFT, D, exec, wofi --show run
       bind = $mainMod SHIFT, S, exec, grimshot copy area

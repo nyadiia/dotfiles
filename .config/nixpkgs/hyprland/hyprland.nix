@@ -18,7 +18,7 @@ in {
       monitor=,preferred,auto,1
       monitor=DP-3,highres,auto,2
 
-      exec-once = $HOME/.config/scripts/autostart
+      exec-once = $HOME/.config/hypr/autostart
 
       input {
           kb_layout = us

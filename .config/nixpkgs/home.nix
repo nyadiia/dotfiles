@@ -37,13 +37,6 @@ in {
     stateVersion = "22.11";
   };
 
-  # nixpkgs.overlays = let
-  #   openASAR = self: super: {
-  #     discord = super.discord.override { withOpenASAR = true; };
-  #   };
-  # in
-  #   [ openASAR ];
-
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 

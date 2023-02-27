@@ -11,6 +11,7 @@
     ./helix.nix
     ./wezterm.nix
     ./wpaperd.nix
+    ./btop
   ];
 
   home = {
@@ -22,6 +23,7 @@
       pkgs.git
       pkgs.wezterm
       pkgs.wpaperd
+      pkgs.btop
     ];
     stateVersion = "22.11";
   };

@@ -29,9 +29,20 @@
     };
     oh-my-zsh = {
       enable = true;
-
       plugins = [ "command-not-found" "git" "history" "sudo" "fzf" ];
     };
+    plugins = [
+      {
+        name = "zsh-nix-shell";
+        file = "nix-shell.plugin.zsh";
+        src = pkgs.fetchFromGitHub {
+          owner = "chisui";
+          repo = "zsh-nix-shell";
+          rev = "v0.5.0";
+          sha256 = "0za4aiwwrlawnia4f29msk822rj9bgcygw6a8a6iikiwzjjz0g91";
+        };
+      }
+    ];
     initExtra = ''
       source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh
       source /nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh
@@ -47,7 +58,7 @@
 
       export TERMINAL=wezterm
       export TERM=wezterm
-      export PATH=$PATH:$XDG_DATA_HOME/cargo/bin:$HOME/.local/bin
+      export PATH=$PATH:$XDG_DATA_HOME/cargo/bin:$HOME/.local/bin:$HOME/bin
 
       export WLR_DRM_NO_MODIFIERS=1
       export GNUPGHOME="$XDG_DATA_HOME"/gnupg

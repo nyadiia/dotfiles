@@ -35,6 +35,7 @@ in {
       pkgs.btop
       (pkgs.python3.withPackages python-packages)
       (pkgs.discord.override { withOpenASAR = true; })
+      pkgs.mpv
     ];
     stateVersion = "22.11";
   };

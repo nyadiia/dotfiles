@@ -21,6 +21,7 @@ window#waybar.hidden {
 #workspaces {
     padding-left: 5px;
     transition: none;
+    border-radius: 15px 0px 0px 15px;
     background: rgba(17, 17, 27, 0.9);
 }
 
@@ -56,7 +57,7 @@ window#waybar.hidden {
     margin-right: 3px;
     padding-left: 5px;
     padding-right: 10px;
-    border-radius: 0px 0px 15px 0px;
+    border-radius: 0px 15px 15px 0px;
     transition: none;
     background: rgba(17, 17, 27, 0.9);
 }
@@ -65,7 +66,7 @@ window#waybar.hidden {
     padding-left: 5px;
     padding-right: 5px;
     margin-right: 3px;
-    border-radius: 0px 0px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
     transition: none;
     background: #f38ba8;
     color: #313244;
@@ -74,7 +75,7 @@ window#waybar.hidden {
 #clock {
     padding-left: 10px;
     padding-right: 5px;
-    border-radius: 0px 0px 0px 15px;
+    border-radius: 15px 0px 0px 15px;
     transition: none;
     color: #ffffff;
     background: rgba(17, 17, 27, 0.9);
@@ -83,7 +84,7 @@ window#waybar.hidden {
 #custom-weather {
     padding-right: 10px;
     padding-left: 5px;
-    border-radius: 0px 0px 15px 0px;
+    border-radius: 0px 15px 15px 0px;
     transition: none;
     color: #ffffff;
     background: rgba(17, 17, 27, 0.9);
@@ -111,7 +112,7 @@ window#waybar.hidden {
 }
 
 #idle_inhibitor {
-    border-radius: 0px 0px 0px 15px;
+    border-radius: 15px 0px 0px 15px;
     padding-left: 10px;
     padding-right: 5px;
     transition: ease-in;
@@ -177,7 +178,7 @@ window#waybar.hidden {
 #custom-ppd {
     padding-left: 5px;
     padding-right: 10px;
-    border-radius: 0px 0px 0px 0px;
+    border-radius: 0px 15px 15px 0px;
     transition: none;
     color: #ffffff;
     background: rgba(17, 17, 27, 0.9);

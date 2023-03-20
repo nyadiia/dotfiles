@@ -1,9 +1,0 @@
-#!/bin/zsh
-
-sleep 1
-mako &
-waybar &
-swww init & 
-swww img ~/Pictures/Wallpapers/light/pixel-snow.gif & 
-fcitx5 -d &
-systemctl --user start wluma &

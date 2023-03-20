@@ -1,3 +1,6 @@
 # dotfiles
 My funny little dotfiles
-remind me to add some images some time so that other people can actually use these
+
+![screenshot of my dotfiles in action](./screenshot.png)
+
+TODO: add a list of the things i use :3

@@ -1,18 +1,23 @@
 #!/usr/bin/env python3
-
-import os
 import json
 
-settings_file_path = "/home/nyadiia/.config/VSCodium/User/settings.json"
-def read_settings():
+def read_settings(settings_file_path):
     with open(settings_file_path, "r") as r:
 
         settings = json.loads("\n".join(r.readlines()))
 
         return settings
 
-settings = read_settings()
-settings["workbench.colorTheme"] = settings["x-default-dark-theme"]
-settings["workbench.iconTheme"] = settings["x-default-dark-icons"]
-with open(settings_file_path, "w") as w:
-    w.write(json.dumps(settings))
+def write(settings_file_path, settings):
+    with open(settings_file_path, "w") as w:
+        w.write(json.dumps(settings))
+
+def main(file, mode):
+    settings = read_settings(file)
+    settings["workbench.colorTheme"] = settings["x-default-" + mode + "-theme"]
+    settings["workbench.iconTheme"] = settings["x-default-" + mode + "-icons"]
+    write(file, settings)
+
+mode = "dark"
+main("/home/nyadiia/.config/VSCodium/User/settings.json", mode)
+main("/home/nyadiia/.config/Code/User/settings.json", mode)

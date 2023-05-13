@@ -5,13 +5,13 @@ current_profile=$(powerprofilesctl get)
 
 case $current_profile in
   power-saver)
-    echo ""
+    echo "󱤅"
     ;;
   balanced)
-    echo "𢡄"
+    echo "󰾞"
     ;;
   performance)
-    echo "龍"
+    echo "󰈸"
     ;;
   *)
     echo "✗"

@@ -2,13 +2,26 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# gpg ssh agent
-if test -z (pgrep ssh-agent)
-  eval (ssh-agent -c) > /dev/null
-  set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
-  set -Ux SSH_AGENT_PID $SSH_AGENT_PID
-  set -Ux SSH_AUTH_SOCK $SSH_AUTH_SOCK
+if status is-login
+    and status is-interactive
+    # To add a key, set -Ua SSH_KEYS_TO_AUTOLOAD keypath
+    set -Ua SSH_KEYS_TO_AUTOLOAD ~/.ssh/id_ed25519
+    eval $(opam env) > /dev/null
+    # To remove a key, set -U --erase 
+SSH_KEYS_TO_AUTOLOAD[index_of_key]
+    keychain --eval $SSH_KEYS_TO_AUTOLOAD | source
 end
+
+# gpg ssh agent
+# if test -z (pgrep ssh-agent)
+#   eval (ssh-agent -c) > /dev/null
+#   set -Ux SSH_AGENT_PID $SSH_AGENT_PID
+# end
+# Ensure that GPG Agent is used as the SSH agent
+set -e SSH_AUTH_SOCK
+set -U -x SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
+set -x GPG_TTY (tty)
+gpgconf --launch gpg-agent
 
 starship init fish | source # load prompt
 zoxide init fish | source
@@ -36,8 +49,7 @@ alias yarn 'yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/yarnrc'
 alias tig 'git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # user vars
-eval $(opam env)
-set -x PATH $PATH /home/nyadiia/.spicetify
+set -x PATH $PATH $HOME/.spicetify $HOME/bin
 set -x EDITOR 'nvim'
 set -x VISUAL 'nvim'
 set -x MANPATH $MANPATH /usr/local/man 

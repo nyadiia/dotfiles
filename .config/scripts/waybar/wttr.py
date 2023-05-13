@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import json
+from time import sleep
 import requests
 from datetime import datetime
 
@@ -57,9 +58,9 @@ WEATHER_CODES = {
 
 data = {}
 
+link = "https://wttr.in/Minneapolis?format=j1"
 
-weather = requests.get("https://wttr.in/Minneapolis?format=j1").json()
-
+weather = requests.get(link).json()
 
 def format_time(time):
     return time.replace("00", "").zfill(2)
@@ -90,7 +91,6 @@ def format_chances(hour):
 
 data['text'] = WEATHER_CODES[weather['current_condition'][0]['weatherCode']] + \
     " " + weather['current_condition'][0]['FeelsLikeC']+ "°"
-#data['text'] = weather['current_condition'][0]['FeelsLikeC']+"°"
 
 data['tooltip'] = f"<b>{weather['current_condition'][0]['weatherDesc'][0]['value']} {weather['current_condition'][0]['temp_C']}°</b>\n"
 data['tooltip'] += f"Feels like: {weather['current_condition'][0]['FeelsLikeC']}°\n"

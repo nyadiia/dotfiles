@@ -1,14 +1,24 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env fish
 
 sleep 1
-
 killall mako
 killall waybar
 killall fcitx5
-killall wpaperd
+swww kill
 
 mako &
 waybar &
-wpaperd
 fcitx5 -d &
 udiskie -2 -s &
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &
+swww init &
+darkman set (darkman get) &
+
+killall xdg-desktop-portal-hyprland
+killall xdg-desktop-portal-wlr
+killall xdg-desktop-portal
+/usr/lib/xdg-desktop-portal-hyprland &
+sleep 2
+/usr/lib/xdg-desktop-portal &
+
